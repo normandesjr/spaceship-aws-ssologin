@@ -1,0 +1,7 @@
+{
+  "clientId": "1111", 
+  "clientSecret": "xpto", 
+  "expiresAt": "2055-08-19T11:11:36Z", 
+  "scopes": ["sso:account:access"], 
+  "grantTypes": ["authorization_code", "refresh_token"]
+}

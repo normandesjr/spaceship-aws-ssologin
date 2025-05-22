@@ -1,0 +1,10 @@
+{
+  "startUrl": "https://12345678.awsapps.com/start", 
+  "region": "us-east-1", 
+  "accessToken": "xpto", 
+  "expiresAt": "2025-05-20T12:00:12Z", 
+  "clientId": "3333", 
+  "clientSecret": "xpto", 
+  "registrationExpiresAt": "2025-08-19T11:11:36Z",
+  "refreshToken": "xpto"
+}
