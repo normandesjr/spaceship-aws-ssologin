@@ -2,14 +2,14 @@
 # AWS SSO Login
 #
 # This plugins shows you which AWS Account your are logged in when the method used 
-# was sso login, like "aws sso login"
+# is sso login, like "aws sso login"
 
 # ------------------------------------------------------------------------------
 # Configuration
 # ------------------------------------------------------------------------------
 
 SPACESHIP_AWS_SSOLOGIN_SHOW="${SPACESHIP_AWS_SSOLOGIN_SHOW=true}"
-SPACESHIP_AWS_SSOLOGIN_ASYNC="${SPACESHIP_AWS_SSOLOGIN_ASYNC=true}"
+SPACESHIP_AWS_SSOLOGIN_ASYNC="${SPACESHIP_AWS_SSOLOGIN_ASYNC=false}"
 SPACESHIP_AWS_SSOLOGIN_PREFIX="${SPACESHIP_AWS_SSOLOGIN_PREFIX="$SPACESHIP_PROMPT_DEFAULT_PREFIX"}"
 SPACESHIP_AWS_SSOLOGIN_SUFFIX="${SPACESHIP_AWS_SSOLOGIN_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"}"
 SPACESHIP_AWS_SSOLOGIN_SYMBOL="${SPACESHIP_AWS_SSOLOGIN_SYMBOL="☁️ "}"
@@ -54,7 +54,7 @@ spaceship_aws_ssologin() {
   if [[ ${#account_names[@]} -gt 0 ]]; then
     joined_account_names="${(j: :)account_names}"
 
-  # Display AWS SSO Login section
+    # Display AWS SSO Login section
     spaceship::section::v4 \
       --color "$SPACESHIP_AWS_SSOLOGIN_COLOR" \
       --prefix "$SPACESHIP_AWS_SSOLOGIN_PREFIX" \
