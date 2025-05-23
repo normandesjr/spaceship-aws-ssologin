@@ -37,7 +37,11 @@ spaceship_aws_ssologin() {
     fi
 
     expires_at_str=$(jq -r '.expiresAt' "$file")
-    expires_at_epoch=$(date -u -d "$expires_at_str" +%s 2>/dev/null)
+    if [[ "$(uname)" == "Darwin" ]]; then
+      expires_at_epoch=$(date -j -u -f "%Y-%m-%dT%H:%M:%SZ" "expires_at_str" "+%s" 2>/dev/null)
+    else
+      expires_at_epoch=$(date -u -d "$expires_at_str" +%s 2>/dev/null)
+    fi
     if (( current_utc_epoch > expires_at_epoch )); then
       continue
     fi
